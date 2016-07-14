@@ -1,0 +1,6 @@
+body {
+  font: 100% Helvetica, sans-serif;
+  background-color: #000000; }
+  body h1, body h2, body h3, body h4, body h5, body h6 {
+    text-align: center;
+    color: #ffffff; }
