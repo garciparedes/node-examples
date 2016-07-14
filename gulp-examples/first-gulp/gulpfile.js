@@ -12,10 +12,14 @@ const PUBLIC_JS_DIRNAME = PUBLIC_DIRNAME + '/js';
 const SASS_DIRNAME = './sass';
 
 
-
+// Start
+//##############################################################################
 
 gulp.task('default', ['sass', 'inject']);
 
+
+// Sass
+//##############################################################################
 
 gulp.task('sass', function () {
     return gulp.src(SASS_DIRNAME + '/**/*.scss')
@@ -23,15 +27,26 @@ gulp.task('sass', function () {
         .pipe(gulp.dest(PUBLIC_CSS_DIRNAME));
 });
 
+
 gulp.task('sass:watch', function () {
     gulp.watch(SASS_DIRNAME + '/**/*.scss', ['sass']);
 });
 
+
+// css & js inyector
+//##############################################################################
+
 gulp.task('inject',['sass'], function () {
     var target = gulp.src(PUBLIC_DIRNAME + '/index.html');
-    // It's not necessary to read the files (will speed up things), we're only after their paths:
-    var sources = gulp.src([PUBLIC_JS_DIRNAME + '/**/*.js', PUBLIC_CSS_DIRNAME + '/**/*.css'], {read: false});
 
-    return target.pipe(inject(sources))
+    var sources = gulp.src([
+        PUBLIC_JS_DIRNAME + '/**/*.js',
+        PUBLIC_CSS_DIRNAME + '/**/*.css'
+    ], {read: false});
+
+    return target.pipe(inject(sources, {relative: true}))
         .pipe(gulp.dest(PUBLIC_DIRNAME));
 });
+
+
+//##############################################################################

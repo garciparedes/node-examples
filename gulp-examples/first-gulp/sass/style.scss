@@ -1,5 +1,5 @@
 $font-stack:    Helvetica, sans-serif;
-$primary-color: #333;
+$primary-color: #ffffff;
 $black: #000000;
 
 
@@ -7,7 +7,8 @@ body {
   font: 100% $font-stack;
   background-color: $black;
 
-  h1 {
+  h1, h2, h3, h4, h5, h6 {
+      text-align: center;
       color: $primary-color;
 
   }
