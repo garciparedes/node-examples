@@ -13,6 +13,6 @@ import { HeroService } from './hero.service';
     ]
 })
 
-export class AppComponent implements OnInit {
+export class AppComponent {
     title = 'Tour of Heroes';
 }
