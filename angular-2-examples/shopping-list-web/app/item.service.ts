@@ -8,9 +8,15 @@ import { Item } from './item';
 @Injectable()
 export class ItemService {
 
-    private itemsUrl = 'http://shopping-list-api.localhost/';
+    private itemsUrl = 'http://shopping-list-api.localhost/items';
 
 
     constructor(private http: Http) { }
 
+
+    getItems(): Promise<Item[]> {
+        return this.http.get(this.itemsUrl)
+            .toPromise()
+            .then(response => response.json().data);
+    }
 }
