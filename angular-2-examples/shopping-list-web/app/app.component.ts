@@ -1,8 +1,17 @@
 import { Component } from '@angular/core';
+import { ROUTER_DIRECTIVES } from '@angular/router';
+
+import { ItemService } from './item.service';
 
 @Component({
     selector: 'my-app',
-    template: '<h1>My First Angular 2 App</h1>'
+    templateUrl: 'app/app.component.html',
+    directives: [ROUTER_DIRECTIVES],
+    providers: [
+        ItemService
+    ]
 })
 
-export class AppComponent { }
+export class AppComponent {
+    title = 'Shopping List Web';
+}
