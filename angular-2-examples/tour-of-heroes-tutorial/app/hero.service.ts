@@ -64,11 +64,12 @@ export class HeroService {
             'Content-Type': 'application/json'
         });
 
-        let url = '${this.heroesUrl}/${hero.id}';
+        let url = `${this.heroesUrl}/${hero.id}`;
+
         return this.http
             .put(url, JSON.stringify(hero), {headers: headers})
             .toPromise()
-            .then(res => res.json().data)
+            .then(() => hero)
             .catch(this.handleError);
     }
 

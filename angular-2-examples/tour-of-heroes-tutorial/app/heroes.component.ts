@@ -50,7 +50,7 @@ export class HeroesComponent implements OnInit {
     close(savedHero: Hero) {
         this.addingHero = false;
         if (savedHero) {
-            this.getHeroes;
+            this.getHeroes();
         }
     }
 
