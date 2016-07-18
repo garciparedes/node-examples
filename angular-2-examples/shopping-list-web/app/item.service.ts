@@ -17,6 +17,6 @@ export class ItemService {
     getItems(): Promise<Item[]> {
         return this.http.get(this.itemsUrl)
             .toPromise()
-            .then(response => response.json().data);
+            .then(response => response.json());
     }
 }

@@ -13,6 +13,21 @@ import { ItemDetailComponent } from './item-detail.component';
     directives: [ItemDetailComponent]
 })
 
-export class ItemsComponent {
+export class ItemsComponent implements OnInit {
 
+    items: Item[];
+
+
+    constructor(
+        private itemService: ItemService) {
+    }
+
+    ngOnInit() {
+        this.getItems();
+    }
+
+    getItems() {
+        this.itemService.getItems()
+            .then(items => this.items = items);
+    }
 }
