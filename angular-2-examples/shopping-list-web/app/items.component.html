@@ -1,10 +1,19 @@
 <h2>Items</h2>
 
 <div>
-    <div *ngFor="let item of items">
-        <span>{{item.product.name}}</span>
-        <span>{{item.done}}</span>
-        <span>{{item.createdAt.date | date }}</span>
-        <input type="checkbox" [(ngModel)]="item.done">
+    <div class="panel panel-default" *ngFor="let item of items">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-xs-5 col-sm-9 col-md-9">
+                    <span>{{item.product.name}}</span>
+                </div>
+                <div class="col-xs-4 col-sm-2 col-md-2">
+                    <span>{{item.createdAt.date | date }}</span>
+                </div>
+                <div class="col-xs-1 col-sm-1 col-md-1">
+                    <input type="checkbox" [(ngModel)]="item.done">
+                </div>
+            </div>
+        </div>
     </div>
 </div>

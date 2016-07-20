@@ -1,2 +1,14 @@
-<h1>{{title}}</h1>
-<router-outlet></router-outlet>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">{{title}}</a>
+            <button type="button" class="btn btn-primary navbar-btn">Create items</button>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid container">
+    <div class="content">
+        <router-outlet></router-outlet>
+    </div>
+</div>
