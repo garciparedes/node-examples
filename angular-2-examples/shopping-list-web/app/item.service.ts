@@ -8,32 +8,17 @@ import { Item } from './item';
 @Injectable()
 export class ItemService {
 
-    private itemsUrl = 'http://shopping-list-api.localhost/items';
-
+    private itemsUrl = 'http://api.shopping-list.localhost/v1/items';
+    private headers = new Headers({
+        'Authorization': 'Basic ' + btoa('garciparedes:1234'),
+    });
 
     constructor(private http: Http) { }
 
 
 
-    createAuthorizationHeader(headers: Headers) {
-        headers.append('Authorization', 'Basic ' + btoa('garciparedes:1234'));
-    }
-
-
     getItems(): Promise<Item[]> {
-        //let headers = new Headers();
-        //this.createAuthorizationHeader(headers);
-
-        let auth = 'Basic ' + btoa('garciparedes:1234');
-
-        let headers = new Headers( {
-            'Content-Type': 'application/json',
-            'Authorization': auth,
-            'Access-Control-Allow-Origin': '*',
-        });
-
-
-        return this.http.get(this.itemsUrl, { headers: headers })
+        return this.http.get(this.itemsUrl, { headers: this.headers })
             .toPromise()
             .then(response => response.json());
     }

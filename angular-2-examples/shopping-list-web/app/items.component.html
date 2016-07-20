@@ -1,9 +1,10 @@
 <h2>Items</h2>
 
-<ul>
-    <li *ngFor="let item of items">
-        <span>{{item.id}}</span>
-        <span>{{item.name}}</span>
+<div>
+    <div *ngFor="let item of items">
+        <span>{{item.product.name}}</span>
         <span>{{item.done}}</span>
-    </li>
-</ul>
+        <span>{{item.createdAt.date | date }}</span>
+        <input type="checkbox" [(ngModel)]="item.done">
+    </div>
+</div>
