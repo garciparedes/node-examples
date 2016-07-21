@@ -1,10 +1,15 @@
 import { Component, EventEmitter, Input, OnInit, OnDestroy, Output } from '@angular/core';
-import { ActivatedRoute } from '@angular/router'
+import { ActivatedRoute,ROUTER_DIRECTIVES } from '@angular/router'
+
+import { FabComponent } from '../shared/index';
 
 @Component({
     selector:'dashboard',
     templateUrl: 'app/dashboard/dashboard.component.html',
-})
+    directives: [
+        ROUTER_DIRECTIVES,
+        FabComponent,
+    ]})
 
 export class DashboardComponent {
 
