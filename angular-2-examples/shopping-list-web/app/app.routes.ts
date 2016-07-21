@@ -15,8 +15,6 @@ import {
     ProductDetailComponent
 } from './products/index';
 
-import { HistoryComponent } from './history/index';
-
 import { ProfileComponent } from './users/index';
 
 
@@ -53,10 +51,6 @@ const routes: RouterConfig = [
     {
         path: 'products/:id',
         component: ProductDetailComponent
-    },
-    {
-        path: 'history',
-        component: HistoryComponent
     },
     {
         path: 'profile',

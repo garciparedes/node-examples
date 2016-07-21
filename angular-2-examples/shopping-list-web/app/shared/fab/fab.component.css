@@ -1,0 +1,17 @@
+.btn-fixed {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    border:none;
+    font-size:1.5em;
+    color:white;
+    background-color: gray;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    margin: auto;
+}
+
+.btn-fixed:focus {
+  outline: none;
+}
