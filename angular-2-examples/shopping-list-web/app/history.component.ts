@@ -2,10 +2,10 @@ import { Component, EventEmitter, Input, OnInit, OnDestroy, Output } from '@angu
 import { ActivatedRoute } from '@angular/router'
 
 @Component({
-    selector:'my-item-detail',
-    templateUrl: 'app/item-detail.component.html',
+    selector:'history',
+    templateUrl: 'app/history.component.html',
 })
 
-export class ItemDetailComponent {
+export class HistoryComponent {
 
 }
