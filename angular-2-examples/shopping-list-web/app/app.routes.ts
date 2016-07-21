@@ -1,18 +1,23 @@
 import { provideRouter, RouterConfig } from '@angular/router';
 
-import { DashboardComponent } from './dashboard/dashboard.component';
 
-import { ItemListComponent } from './items/item-list/item-list.component';
-import { AddItemComponent } from './items/add-item/add-item.component';
-import { ItemDetailComponent } from './items/item-detail/item-detail.component';
+import { DashboardComponent } from './dashboard/index';
 
-import { ProductsComponent } from './products/product-list/products.component';
-import { AddProductComponent } from './products/add-product/add-product.component';
-import { ProductDetailComponent } from './products/product-detail/product-detail.component';
+import {
+    ItemListComponent,
+    AddItemComponent,
+    ItemDetailComponent
+} from './items/index';
 
-import { HistoryComponent } from './history/history.component';
+import {
+    ProductListComponent,
+    AddProductComponent,
+    ProductDetailComponent
+} from './products/index';
 
-import { ProfileComponent } from './users/profile/profile.component';
+import { HistoryComponent } from './history/index';
+
+import { ProfileComponent } from './users/index';
 
 
 const routes: RouterConfig = [
@@ -39,7 +44,7 @@ const routes: RouterConfig = [
     },
     {
         path: 'products',
-        component: ProductsComponent
+        component: ProductListComponent
     },
     {
         path: 'products/add',

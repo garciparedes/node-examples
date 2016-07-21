@@ -1,17 +1,17 @@
 import { Component, EventEmitter, Input, OnInit, OnDestroy, Output } from '@angular/core';
 import { ActivatedRoute, ROUTER_DIRECTIVES } from '@angular/router'
 
-import { Product } from 'app/products/shared/product';
-import { ProductService } from 'app/products/shared/product.service';
+import { Product } from '../shared/product';
+import { ProductService } from '../shared/product.service';
 
 @Component({
-    selector:'products',
+    selector:'product-list',
     directives: [ROUTER_DIRECTIVES],
-    templateUrl: 'app/products/product-list/products.component.html',
-    styleUrls: ['app/products/product-list/products.component.css'],
+    templateUrl: 'app/products/product-list/product-list.component.html',
+    styleUrls: ['app/products/product-list/product-list.component.css'],
 })
 
-export class ProductsComponent implements OnInit {
+export class ProductListComponent implements OnInit {
 
     products: Product[];
 

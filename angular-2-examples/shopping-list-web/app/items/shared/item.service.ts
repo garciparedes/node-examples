@@ -3,8 +3,8 @@ import { Headers, Http} from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Item } from 'app/items/shared/item';
-import { Product } from 'app/product';
+import { Item } from './item';
+import { Product } from '../../products/shared/product';
 
 @Injectable()
 export class ItemService {
@@ -39,6 +39,7 @@ export class ItemService {
             .post(this.itemsUrl, {productId: product.id}, {headers: this.headers})
             .toPromise()
             .then(res => res.json().data)
-            .catch(this.handleError);
+            //.catch(this.handleError)
+            ;
     }
 }

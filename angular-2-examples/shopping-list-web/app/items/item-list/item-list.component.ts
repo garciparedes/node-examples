@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ROUTER_DIRECTIVES } from '@angular/router'
 
-import { Item } from 'app/items/shared/item';
-import { ItemService } from 'app/items/shared/item.service';
+import { Item } from '../shared/item';
+import { ItemService } from '../shared/item.service';
 
-import { ItemDetailComponent } from 'app/items/item-detail/item-detail.component';
+import { ItemDetailComponent } from '../item-detail/item-detail.component';
 
 @Component({
     selector: 'item-list',
