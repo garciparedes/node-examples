@@ -1,21 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ROUTER_DIRECTIVES } from '@angular/router'
 
-import { Item } from './item';
-import { ItemService } from './item.service';
+import { Item } from 'app/items/shared/item';
+import { ItemService } from 'app/items/shared/item.service';
 
-import { ItemDetailComponent } from './item-detail.component';
+import { ItemDetailComponent } from 'app/items/item-detail/item-detail.component';
 
 @Component({
-    selector: 'my-items',
-    templateUrl: 'app/items.component.html',
+    selector: 'item-list',
+    templateUrl: 'app/items/item-list/item-list.component.html',
     directives: [
         ItemDetailComponent,
         ROUTER_DIRECTIVES
     ]
 })
 
-export class ItemsComponent implements OnInit {
+export class ItemListComponent implements OnInit {
 
     items: Item[];
 

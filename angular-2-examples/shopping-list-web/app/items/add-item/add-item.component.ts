@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router'
 
 @Component({
     selector:'add-item',
-    templateUrl: 'app/add-item.component.html',
+    templateUrl: 'app/items/add-item/add-item.component.html',
 })
 
 export class AddItemComponent {

@@ -3,7 +3,7 @@ import { Headers, Http} from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Product } from './product';
+import { Product } from './products/shared/product';
 
 @Injectable()
 export class ProductService {
@@ -24,7 +24,7 @@ export class ProductService {
             .then(response => response.json());
     }
 
-    getById(productId: int): Promise<Product> {
+    getById(productId: number): Promise<Product> {
         let url = `${this.productsUrl}/${productId}`;
 
         return this.http.get(url, { headers: this.headers })

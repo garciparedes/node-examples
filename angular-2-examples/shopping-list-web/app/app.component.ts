@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 
-import { ToolbarComponent } from './toolbar.component';
+import { ToolbarComponent } from './shared/toolbar/toolbar.component';
 
-import { ItemService } from './item.service';
-import { ProductService } from './product.service';
+import { ItemService } from './items/shared/item.service';
+import { ProductService } from './products/shared/product.service';
 
 @Component({
     selector: 'my-app',
@@ -21,5 +21,5 @@ import { ProductService } from './product.service';
 })
 
 export class AppComponent {
-    
+
 }

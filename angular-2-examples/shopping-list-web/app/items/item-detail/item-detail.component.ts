@@ -2,10 +2,10 @@ import { Component, EventEmitter, Input, OnInit, OnDestroy, Output } from '@angu
 import { ActivatedRoute } from '@angular/router'
 
 @Component({
-    selector:'dashboard',
-    templateUrl: 'app/dashboard.component.html',
+    selector:'item-detail',
+    templateUrl: 'app/items/item-detail/item-detail.component.html',
 })
 
-export class DashboardComponent {
+export class ItemDetailComponent {
 
 }

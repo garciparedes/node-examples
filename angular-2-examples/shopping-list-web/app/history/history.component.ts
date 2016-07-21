@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router'
 
 @Component({
     selector:'history',
-    templateUrl: 'app/history.component.html',
+    templateUrl: 'app/history/history.component.html',
 })
 
 export class HistoryComponent {

@@ -1,18 +1,18 @@
 import { provideRouter, RouterConfig } from '@angular/router';
 
-import { DashboardComponent } from './dashboard.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
-import { ItemsComponent } from './items.component';
-import { AddItemComponent } from './add-item.component';
-import { ItemDetailComponent } from './item-detail.component';
+import { ItemListComponent } from './items/item-list/item-list.component';
+import { AddItemComponent } from './items/add-item/add-item.component';
+import { ItemDetailComponent } from './items/item-detail/item-detail.component';
 
-import { ProductsComponent } from './products.component';
-import { AddProductComponent } from './add-product.component';
-import { ProductDetailComponent } from './product-detail.component';
+import { ProductsComponent } from './products/product-list/products.component';
+import { AddProductComponent } from './products/add-product/add-product.component';
+import { ProductDetailComponent } from './products/product-detail/product-detail.component';
 
-import { HistoryComponent } from './history.component';
+import { HistoryComponent } from './history/history.component';
 
-import { ProfileComponent } from './profile.component';
+import { ProfileComponent } from './users/profile/profile.component';
 
 
 const routes: RouterConfig = [
@@ -27,7 +27,7 @@ const routes: RouterConfig = [
     },
     {
         path: 'items',
-        component: ItemsComponent
+        component: ItemListComponent
     },
     {
         path: 'items/add',
@@ -40,6 +40,10 @@ const routes: RouterConfig = [
     {
         path: 'products',
         component: ProductsComponent
+    },
+    {
+        path: 'products/add',
+        component: AddProductComponent
     },
     {
         path: 'products/:id',

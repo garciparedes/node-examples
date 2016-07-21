@@ -3,7 +3,7 @@ import { ActivatedRoute, ROUTER_DIRECTIVES } from '@angular/router'
 
 @Component({
     selector: 'toolbar',
-    templateUrl: 'app/toolbar.component.html',
+    templateUrl: 'app/shared/toolbar/toolbar.component.html',
     directives: [
         ROUTER_DIRECTIVES
     ]
