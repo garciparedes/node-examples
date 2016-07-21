@@ -5,7 +5,6 @@ import { DashboardComponent } from './dashboard/index';
 
 import {
     ItemListComponent,
-    AddItemComponent,
     ItemDetailComponent
 } from './items/index';
 
@@ -31,10 +30,6 @@ const routes: RouterConfig = [
     {
         path: 'items',
         component: ItemListComponent
-    },
-    {
-        path: 'items/add',
-        component: AddItemComponent
     },
     {
         path: 'items/:id',

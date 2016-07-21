@@ -1,8 +1,7 @@
 <div class="panel panel-default">
     <div class="panel-body">
         <div class="panel panel-default"
-            *ngFor="let item of items"
-            [routerLink]= "['/items', item.id]">
+            *ngFor="let item of items">
 
             <div class="panel-body">
                 <div class="row">
@@ -20,4 +19,4 @@
         </div>
     </div>
 </div>
-<fab [icon]="'plus'" [route]="['/items/add']"></fab>
+<fab [icon]="'plus'" [route]="['/products']"></fab>
