@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, ROUTER_DIRECTIVES } from '@angular/router'
 
 import { Item } from './item';
 import { ItemService } from './item.service';
@@ -9,7 +9,10 @@ import { ItemDetailComponent } from './item-detail.component';
 @Component({
     selector: 'my-items',
     templateUrl: 'app/items.component.html',
-    directives: [ItemDetailComponent]
+    directives: [
+        ItemDetailComponent,
+        ROUTER_DIRECTIVES
+    ]
 })
 
 export class ItemsComponent implements OnInit {
@@ -26,7 +29,7 @@ export class ItemsComponent implements OnInit {
     }
 
     getItems() {
-        this.itemService.getItems()
+        this.itemService.getAll()
             .then(items => this.items = items);
     }
 }

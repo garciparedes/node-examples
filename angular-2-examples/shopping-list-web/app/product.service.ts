@@ -3,13 +3,12 @@ import { Headers, Http} from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Item } from './item';
 import { Product } from './product';
 
 @Injectable()
-export class ItemService {
+export class ProductService {
 
-    private itemsUrl = 'http://api.shopping-list.localhost/v1/items';
+    private productsUrl = 'http://api.shopping-list.localhost/v1/products';
     private headers = new Headers({
         'Authorization': 'Basic ' + btoa('garciparedes:1234'),
         'Content-Type': 'application/json',
@@ -19,26 +18,17 @@ export class ItemService {
 
 
 
-    getAll(): Promise<Item[]> {
-        return this.http.get(this.itemsUrl, { headers: this.headers })
+    getAll(): Promise<Product[]> {
+        return this.http.get(this.productsUrl, { headers: this.headers })
             .toPromise()
             .then(response => response.json());
     }
 
-    getById(itemId: int): Promise<Item> {
-        let url = `${this.itemsUrl}/${itemId}`;
+    getById(productId: int): Promise<Product> {
+        let url = `${this.productsUrl}/${productId}`;
 
         return this.http.get(url, { headers: this.headers })
             .toPromise()
             .then(response => response.json());
-    }
-
-
-    private createItem(product: Product): Promise<Item> {
-        return this.http
-            .post(this.itemsUrl, {productId: product.id}, {headers: this.headers})
-            .toPromise()
-            .then(res => res.json().data)
-            .catch(this.handleError);
     }
 }

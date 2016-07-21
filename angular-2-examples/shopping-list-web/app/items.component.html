@@ -1,6 +1,9 @@
 <div class="panel panel-default">
     <div class="panel-body">
-        <div class="panel panel-default" *ngFor="let item of items">
+        <div class="panel panel-default"
+            *ngFor="let item of items"
+            [routerLink]= "['/items', item.id]">
+            
             <div class="panel-body">
                 <div class="row">
                     <div class="col-xs-5 col-sm-9 col-md-9">

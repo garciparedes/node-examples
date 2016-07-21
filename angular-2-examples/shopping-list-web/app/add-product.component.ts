@@ -2,10 +2,10 @@ import { Component, EventEmitter, Input, OnInit, OnDestroy, Output } from '@angu
 import { ActivatedRoute } from '@angular/router'
 
 @Component({
-    selector:'item-detail',
-    templateUrl: 'app/item-detail.component.html',
+    selector:'add-product',
+    templateUrl: 'app/add-product.component.html',
 })
 
-export class ItemDetailComponent {
+export class AddProductComponent {
 
 }
