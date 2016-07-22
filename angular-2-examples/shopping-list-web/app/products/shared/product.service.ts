@@ -18,17 +18,25 @@ export class ProductService {
 
 
 
-    getAll(): Promise<Product[]> {
+    get(id: number = null) {
+        if (id === null) {
+            return this.getAll();
+        } else {
+            return this.getById(id);
+        }
+    }
+
+    private getAll(): Promise<Product[]> {
         return this.http.get(this.productsUrl, { headers: this.headers })
             .toPromise()
             .then(response => response.json());
     }
 
-    getById(productId: number): Promise<Product> {
-        let url = `${this.productsUrl}/${productId}`;
-
+    private getById(id: number): Promise<Product> {
+        let url = `${this.productsUrl}/${id}`;
         return this.http.get(url, { headers: this.headers })
             .toPromise()
             .then(response => response.json());
+
     }
 }
