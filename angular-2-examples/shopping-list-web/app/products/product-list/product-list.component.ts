@@ -27,7 +27,7 @@ export class ProductListComponent implements OnInit {
     }
 
     getProducts() {
-        this.productService.get()
+        this.productService.getAll()
             .then(products => this.products = products);
     }
 }

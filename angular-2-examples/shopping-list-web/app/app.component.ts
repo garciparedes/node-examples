@@ -1,10 +1,24 @@
-import { Component } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
+import {
+    Component,
+} from '@angular/core';
 
-import { ToolbarComponent } from './shared/toolbar/toolbar.component';
+import {
+    ROUTER_DIRECTIVES,
+} from '@angular/router';
 
-import { ItemService } from './items/shared/item.service';
-import { ProductService } from './products/shared/product.service';
+import {
+    ToolbarComponent,
+    WikipediaService,
+} from './shared/index';
+
+import {
+    ItemService,
+} from './items/index';
+
+import {
+    ProductService,
+} from './products/index';
+
 
 @Component({
     selector: 'my-app',
@@ -17,9 +31,8 @@ import { ProductService } from './products/shared/product.service';
     providers: [
         ItemService,
         ProductService,
+        WikipediaService,
     ]
 })
 
-export class AppComponent {
-
-}
+export class AppComponent { }

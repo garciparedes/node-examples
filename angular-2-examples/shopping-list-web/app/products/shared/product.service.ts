@@ -16,23 +16,13 @@ export class ProductService {
 
     constructor(private http: Http) { }
 
-
-
-    get(id: number = null) {
-        if (id === null) {
-            return this.getAll();
-        } else {
-            return this.getById(id);
-        }
-    }
-
-    private getAll(): Promise<Product[]> {
+    getAll(): Promise<Product[]> {
         return this.http.get(this.productsUrl, { headers: this.headers })
             .toPromise()
             .then(response => response.json());
     }
 
-    private getById(id: number): Promise<Product> {
+    getById(id: number): Promise<Product> {
         let url = `${this.productsUrl}/${id}`;
         return this.http.get(url, { headers: this.headers })
             .toPromise()

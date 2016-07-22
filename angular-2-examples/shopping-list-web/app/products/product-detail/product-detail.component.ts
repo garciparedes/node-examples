@@ -14,6 +14,10 @@ import {
     ProductService,
 } from '../shared/index';
 
+import {
+    WikipediaService,
+} from '../../shared/index';
+
 @Component({
     selector:'product-detail',
     templateUrl: 'app/products/product-detail/product-detail.component.html',
@@ -22,11 +26,13 @@ import {
 export class ProductDetailComponent {
 
     private product: Product;
+    private wikiDescription: string;
+    private sub: any;
 
     constructor(
         private productService: ProductService,
+        private wikipediaService: WikipediaService,
         private route: ActivatedRoute) {
-
     }
 
 
@@ -39,9 +45,17 @@ export class ProductDetailComponent {
         });
     }
 
+    getWikiDescriptionByName(name: string) {
+        this.wikipediaService.getDescriptionByName(name)
+            .then(text => this.wikiDescription = text.substring(0,300));
+    }
+
 
     getProductById(id: number) {
-        this.productService.get(id)
-            .then(product => this.product = product);
+        this.productService.getById(id)
+        .then(product => {
+            this.product = product;
+            this.getWikiDescriptionByName(this.product.name);
+        });
     }
 }
