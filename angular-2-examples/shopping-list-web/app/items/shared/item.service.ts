@@ -34,9 +34,29 @@ export class ItemService {
     }
 
 
-    private createItem(product: Product): Promise<Item> {
+    createItem(product: Product): Promise<Item> {
         return this.http
             .post(this.itemsUrl, {productId: product.id}, {headers: this.headers})
+            .toPromise()
+            .then(res => res.json().data)
+            //.catch(this.handleError)
+            ;
+    }
+
+    updateItem(item: Item): Promise<Item> {
+        return this.http
+            .put(this.itemsUrl, item, {headers: this.headers})
+            .toPromise()
+            .then(res => res.json().data)
+            //.catch(this.handleError)
+            ;
+    }
+
+    setDone(item: Item): Promise<Item> {
+        let url = `${this.itemsUrl}/${item.id}`;
+        console.log(item);
+        return this.http
+            .patch(url, {done: item.done}, {headers: this.headers})
             .toPromise()
             .then(res => res.json().data)
             //.catch(this.handleError)

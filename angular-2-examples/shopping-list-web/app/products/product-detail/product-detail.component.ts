@@ -15,6 +15,10 @@ import {
 } from '../shared/index';
 
 import {
+    ItemService,
+} from '../../items/index';
+
+import {
     WikipediaService,
 } from '../../shared/index';
 
@@ -31,6 +35,7 @@ export class ProductDetailComponent {
 
     constructor(
         private productService: ProductService,
+        private itemService: ItemService,
         private wikipediaService: WikipediaService,
         private route: ActivatedRoute) {
     }
@@ -43,6 +48,11 @@ export class ProductDetailComponent {
                 this.getProductById(id);
             }
         });
+    }
+
+    addProduct() {
+        this.itemService.createItem(this.product)
+            .then(item => console.log("hola"));
     }
 
     getWikiDescriptionByName(name: string) {

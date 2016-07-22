@@ -30,8 +30,13 @@ export class ItemListComponent implements OnInit {
         this.getItems();
     }
 
+    itemChanged(item: Item) {
+        this.itemService.setDone(item)
+            .then(itemR => console.log("adios"));
+    }
+
     getItems() {
         this.itemService.getAll()
-            .then(items => this.items = items);
+            .then(items => this.items = items.reverse());
     }
 }

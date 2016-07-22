@@ -12,7 +12,9 @@
                         <span>{{item.createdAt.date | date }}</span>
                     </div>
                     <div class="col-xs-1 col-sm-1 col-md-1">
-                        <input type="checkbox" [(ngModel)]="item.done">
+                        <input type="checkbox"
+                            [(ngModel)]="item.done"
+                            (ngModelChange)="itemChanged(item)">
                     </div>
                 </div>
             </div>
