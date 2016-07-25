@@ -1,6 +1,7 @@
 import {
     provideRouter,
     RouterConfig,
+    CanActivate,
 } from '@angular/router';
 
 import {
@@ -21,6 +22,7 @@ import {
     ProfileComponent,
     LoginComponent,
     SigninComponent,
+    AuthGuard,
 } from './users/index';
 
 
@@ -32,31 +34,38 @@ const routes: RouterConfig = [
     },
     {
         path: 'dashboard',
-        component: DashboardComponent
+        component: DashboardComponent,
+        canActivate: [AuthGuard]
     },
     {
         path: 'items',
-        component: ItemListComponent
+        component: ItemListComponent,
+        canActivate: [AuthGuard]
     },
     {
         path: 'items/:id',
-        component: ItemListComponent
+        component: ItemListComponent,
+        canActivate: [AuthGuard]
     },
     {
         path: 'products',
-        component: ProductListComponent
+        component: ProductListComponent,
+        canActivate: [AuthGuard]
     },
     {
         path: 'products/add',
-        component: AddProductComponent
+        component: AddProductComponent,
+        canActivate: [AuthGuard]
     },
     {
         path: 'products/:id',
-        component: ProductDetailComponent
+        component: ProductDetailComponent,
+        canActivate: [AuthGuard]
     },
     {
         path: 'profile',
-        component: ProfileComponent
+        component: ProfileComponent,
+        canActivate: [AuthGuard]
     },
     {
         path: 'login',

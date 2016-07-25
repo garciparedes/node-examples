@@ -21,6 +21,7 @@ import {
 
 import {
     UserService,
+    AuthGuard,
 } from './users/index';
 
 @Component({
@@ -36,6 +37,7 @@ import {
         ProductService,
         UserService,
         WikipediaService,
+        AuthGuard,
     ]
 })
 

@@ -10,10 +10,14 @@ import {
 import {
     AppComponent,
     APP_ROUTER_PROVIDERS,
+    AuthGuard,
+    UserService,
 } from './app/index';
 
 bootstrap(AppComponent, [
     APP_ROUTER_PROVIDERS,
     HTTP_PROVIDERS,
     JSONP_PROVIDERS,
+    UserService,
+    AuthGuard,
 ]);
