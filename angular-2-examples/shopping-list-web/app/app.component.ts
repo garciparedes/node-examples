@@ -19,6 +19,9 @@ import {
     ProductService,
 } from 'app/products/index';
 
+import {
+    UserService,
+} from 'app/users/index';
 
 @Component({
     selector: 'my-app',
@@ -31,6 +34,7 @@ import {
     providers: [
         ItemService,
         ProductService,
+        UserService,
         WikipediaService,
     ]
 })
