@@ -9,11 +9,11 @@ import {
 
 import {
     AppComponent,
-    appRouterProviders,
+    APP_ROUTER_PROVIDERS,
 } from './app/index';
 
 bootstrap(AppComponent, [
-    appRouterProviders,
+    APP_ROUTER_PROVIDERS,
     HTTP_PROVIDERS,
     JSONP_PROVIDERS,
 ]);

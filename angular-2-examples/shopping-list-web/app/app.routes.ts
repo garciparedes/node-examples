@@ -1,7 +1,11 @@
-import { provideRouter, RouterConfig } from '@angular/router';
+import {
+    provideRouter,
+    RouterConfig,
+} from '@angular/router';
 
-
-import { DashboardComponent } from './dashboard/index';
+import {
+    DashboardComponent,
+} from './dashboard/index';
 
 import {
     ItemListComponent,
@@ -14,7 +18,11 @@ import {
     ProductDetailComponent
 } from './products/index';
 
-import { ProfileComponent } from './users/index';
+import {
+    ProfileComponent,
+    LoginComponent,
+    SigninComponent,
+} from './users/index';
 
 
 const routes: RouterConfig = [
@@ -50,9 +58,17 @@ const routes: RouterConfig = [
     {
         path: 'profile',
         component: ProfileComponent
+    },
+    {
+        path: 'login',
+        component: LoginComponent
+    },
+    {
+        path: 'signin',
+        component: SigninComponent
     }
 ];
 
-export const appRouterProviders = [
+export const APP_ROUTER_PROVIDERS = [
     provideRouter(routes)
 ];
