@@ -1,8 +1,17 @@
-import { Component, EventEmitter, Input, OnInit, OnDestroy, Output } from '@angular/core';
-import { ActivatedRoute, ROUTER_DIRECTIVES } from '@angular/router'
+import {
+    Component,
+    OnInit,
+} from '@angular/core';
 
-import { Product } from '../shared/product';
-import { ProductService } from '../shared/product.service';
+import {
+    ActivatedRoute,
+    ROUTER_DIRECTIVES,
+} from '@angular/router'
+
+import {
+    Product,
+    ProductService,
+} from 'app/products/shared/index';
 
 @Component({
     selector:'product-list',

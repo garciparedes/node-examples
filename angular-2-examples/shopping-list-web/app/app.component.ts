@@ -9,15 +9,15 @@ import {
 import {
     ToolbarComponent,
     WikipediaService,
-} from './shared/index';
+} from 'app/shared/index';
 
 import {
     ItemService,
-} from './items/index';
+} from 'app/items/index';
 
 import {
     ProductService,
-} from './products/index';
+} from 'app/products/index';
 
 
 @Component({

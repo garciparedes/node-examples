@@ -3,7 +3,9 @@ import { Headers, Http} from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Product } from './product';
+import {
+    Product,
+} from 'app/products/index';
 
 @Injectable()
 export class ProductService {

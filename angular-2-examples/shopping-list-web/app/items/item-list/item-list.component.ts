@@ -9,10 +9,14 @@ import {
     ROUTER_DIRECTIVES,
 } from '@angular/router'
 
-import { Item } from '../shared/item';
-import { ItemService } from '../shared/item.service';
+import {
+    Item,
+    ItemService,
+} from 'app/items/shared/index';
 
-import { FabComponent } from '../../shared/index';
+import {
+    FabComponent,
+} from 'app/shared/index';
 
 @Component({
     selector: 'item-list',

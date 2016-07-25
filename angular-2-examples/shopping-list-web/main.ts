@@ -10,7 +10,7 @@ import {
 import {
     AppComponent,
     APP_ROUTER_PROVIDERS,
-} from './app/index';
+} from 'app/index';
 
 bootstrap(AppComponent, [
     APP_ROUTER_PROVIDERS,

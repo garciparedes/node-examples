@@ -11,11 +11,11 @@ import 'rxjs/add/operator/toPromise';
 
 import {
     Item,
-} from './item';
+} from 'app/items/index';
 
 import {
     Product,
-} from '../../products/shared/product';
+} from 'app/products/index';
 
 @Injectable()
 export class ItemService {
