@@ -9,7 +9,6 @@ import {
 
 import {
     ItemListComponent,
-    ItemDetailComponent
 } from './items/index';
 
 import {
@@ -41,7 +40,7 @@ const routes: RouterConfig = [
     },
     {
         path: 'items/:id',
-        component: ItemDetailComponent
+        component: ItemListComponent
     },
     {
         path: 'products',

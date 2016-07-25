@@ -1,10 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, ROUTER_DIRECTIVES } from '@angular/router'
+import {
+    Component,
+    OnInit,
+} from '@angular/core';
+
+import {
+    ActivatedRoute,
+    Router,
+    ROUTER_DIRECTIVES,
+} from '@angular/router'
 
 import { Item } from '../shared/item';
 import { ItemService } from '../shared/item.service';
 
-import { ItemDetailComponent } from '../item-detail/item-detail.component';
 import { FabComponent } from '../../shared/index';
 
 @Component({
@@ -12,22 +19,31 @@ import { FabComponent } from '../../shared/index';
     templateUrl: 'app/items/item-list/item-list.component.html',
     directives: [
         ROUTER_DIRECTIVES,
-        ItemDetailComponent,
         FabComponent,
     ]
 })
 
 export class ItemListComponent implements OnInit {
 
-    items: Item[];
+    private items: Item[];
+    private sub: any;
 
     constructor(
         private router: Router,
-        private itemService: ItemService) {
+        private itemService: ItemService,
+        private route: ActivatedRoute) {
     }
 
     ngOnInit() {
-        this.getItems();
+
+        this.sub = this.route.params.subscribe(params => {
+            if (params['id'] !== undefined){
+                let id = +params['id'];
+                this.getItems(id);
+            } else {
+                this.getItems();
+            }
+        });
     }
 
     itemChanged(item: Item) {
@@ -40,8 +56,13 @@ export class ItemListComponent implements OnInit {
         }
     }
 
-    getItems() {
+    getItems(id?: number) {
         this.itemService.getAll()
-            .then(items => this.items = items);
+            .then(items => {
+                this.items = items;
+                if (id){
+                    this.items = this.items.filter(item => item.id === id);
+                }
+            });
     }
 }
