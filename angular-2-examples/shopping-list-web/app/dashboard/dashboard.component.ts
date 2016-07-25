@@ -9,7 +9,7 @@ import {
 
 import {
     FabComponent,
-} from 'app/shared/index';
+} from '../shared/index';
 
 @Component({
     selector:'dashboard',

@@ -6,7 +6,7 @@ import 'rxjs/add/operator/toPromise';
 
 import {
     User,
-} from 'app/users/shared/index';
+} from './index';
 
 @Injectable()
 export class UserService {
@@ -21,7 +21,7 @@ export class UserService {
 
     }
 
-    getUser(): Promise<User> {
+    getUser(): User {
         return this.user;
     }
 

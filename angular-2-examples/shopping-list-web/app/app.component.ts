@@ -9,19 +9,19 @@ import {
 import {
     ToolbarComponent,
     WikipediaService,
-} from 'app/shared/index';
+} from './shared/index';
 
 import {
     ItemService,
-} from 'app/items/index';
+} from './items/index';
 
 import {
     ProductService,
-} from 'app/products/index';
+} from './products/index';
 
 import {
     UserService,
-} from 'app/users/index';
+} from './users/index';
 
 @Component({
     selector: 'my-app',

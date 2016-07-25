@@ -5,23 +5,23 @@ import {
 
 import {
     DashboardComponent,
-} from 'app/dashboard/index';
+} from './dashboard/index';
 
 import {
     ItemListComponent,
-} from 'app/items/index';
+} from './items/index';
 
 import {
     ProductListComponent,
     AddProductComponent,
     ProductDetailComponent
-} from 'app/products/index';
+} from './products/index';
 
 import {
     ProfileComponent,
     LoginComponent,
     SigninComponent,
-} from 'app/users/index';
+} from './users/index';
 
 
 const routes: RouterConfig = [

@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router'
 
 import {
     UserService,
-} from 'app/users/shared/index';
+} from '../shared/index';
 
 @Component({
     selector:'profile',
@@ -14,7 +14,7 @@ export class ProfileComponent {
 
 
     constructor(
-        private userService: UserService,
+        private userService: UserService
     ) {
         console.log(this.userService.getBasicAuth());
     }

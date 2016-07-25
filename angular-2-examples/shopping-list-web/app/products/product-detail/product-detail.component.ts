@@ -12,15 +12,15 @@ import {
 import {
     Product,
     ProductService,
-} from 'app/products/shared/index';
+} from '../shared/index';
 
 import {
     ItemService,
-} from 'app/items/index';
+} from '../../items/index';
 
 import {
     WikipediaService,
-} from 'app/shared/index';
+} from '../../shared/index';
 
 @Component({
     selector:'product-detail',

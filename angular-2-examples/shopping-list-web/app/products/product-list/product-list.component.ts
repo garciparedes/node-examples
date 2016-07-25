@@ -11,7 +11,7 @@ import {
 import {
     Product,
     ProductService,
-} from 'app/products/shared/index';
+} from '../shared/index';
 
 @Component({
     selector:'product-list',

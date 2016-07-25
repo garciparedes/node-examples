@@ -11,15 +11,15 @@ import 'rxjs/add/operator/toPromise';
 
 import {
     Item,
-} from 'app/items/index';
+} from './index';
 
 import {
     Product,
-} from 'app/products/index';
+} from '../../products/index';
 
 import {
     UserService,
-} from 'app/users/shared/index';
+} from '../../users/shared/index';
 
 
 @Injectable()
@@ -35,7 +35,7 @@ export class ItemService {
 
     constructor(
         private http: Http,
-        private userService: UserService,
+        private userService: UserService
     ) { }
 
 

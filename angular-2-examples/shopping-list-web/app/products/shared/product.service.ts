@@ -5,11 +5,11 @@ import 'rxjs/add/operator/toPromise';
 
 import {
     Product,
-} from 'app/products/index';
+} from './index';
 
 import {
     UserService,
-} from 'app/users/index';
+} from '../../users/index';
 
 @Injectable()
 export class ProductService {
@@ -22,7 +22,7 @@ export class ProductService {
 
     constructor(
         private http: Http,
-        private userService: UserService,
+        private userService: UserService
     ) { }
 
     getAll(): Promise<Product[]> {

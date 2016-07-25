@@ -12,11 +12,11 @@ import {
 import {
     Item,
     ItemService,
-} from 'app/items/shared/index';
+} from '../shared/index';
 
 import {
     FabComponent,
-} from 'app/shared/index';
+} from '../../shared/index';
 
 @Component({
     selector: 'item-list',
