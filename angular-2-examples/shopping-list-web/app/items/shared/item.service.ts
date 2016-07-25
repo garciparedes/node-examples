@@ -1,10 +1,21 @@
-import { Injectable } from '@angular/core';
-import { Headers, Http} from '@angular/http';
+import {
+    Injectable,
+} from '@angular/core';
+
+import {
+    Headers,
+    Http,
+} from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Item } from './item';
-import { Product } from '../../products/shared/product';
+import {
+    Item,
+} from './item';
+
+import {
+    Product,
+} from '../../products/shared/product';
 
 @Injectable()
 export class ItemService {
@@ -54,7 +65,6 @@ export class ItemService {
 
     setDone(item: Item): Promise<Item> {
         let url = `${this.itemsUrl}/${item.id}`;
-        console.log(item);
         return this.http
             .patch(url, {done: item.done}, {headers: this.headers})
             .toPromise()

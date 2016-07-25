@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ROUTER_DIRECTIVES } from '@angular/router'
+import { Router, ROUTER_DIRECTIVES } from '@angular/router'
 
 import { Item } from '../shared/item';
 import { ItemService } from '../shared/item.service';
@@ -21,8 +21,8 @@ export class ItemListComponent implements OnInit {
 
     items: Item[];
 
-
     constructor(
+        private router: Router,
         private itemService: ItemService) {
     }
 
@@ -31,12 +31,17 @@ export class ItemListComponent implements OnInit {
     }
 
     itemChanged(item: Item) {
-        this.itemService.setDone(item)
-            .then(itemR => console.log("adios"));
+        this.itemService.setDone(item);
+    }
+
+    goToProduct(item: Item, event: any) {
+        if (event.target.type !== 'checkbox') {
+            this.router.navigate(['/products', item.product.id]);
+        }
     }
 
     getItems() {
         this.itemService.getAll()
-            .then(items => this.items = items.reverse());
+            .then(items => this.items = items);
     }
 }
