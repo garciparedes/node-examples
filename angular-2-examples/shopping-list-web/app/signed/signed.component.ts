@@ -11,14 +11,14 @@ import {
 
 @Component({
     selector:'logged',
-    templateUrl: 'app/logged/logged.component.html',
-    styleUrls: [ 'app/logged/logged.component.css'],
+    templateUrl: 'app/signed/signed.component.html',
+    styleUrls: [ 'app/signed/signed.component.css'],
     directives: [
         ROUTER_DIRECTIVES,
         ToolbarComponent,
     ]
 })
 
-export class LoggedComponent {
+export class SignedComponent {
 
 }

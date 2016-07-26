@@ -8,3 +8,4 @@ export * from './dashboard/index';
 export * from './items/index';
 export * from './products/index';
 export * from './users/index';
+export * from './signed/index';

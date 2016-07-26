@@ -9,8 +9,8 @@ import {
 } from './auth/index';
 
 import {
-    LoggedComponent,
-} from './logged/index';
+    SignedComponent,
+} from './signed/index';
 
 import {
     DashboardComponent,
@@ -56,7 +56,7 @@ const routes: RouterConfig = [
     },
     {
         path: '',
-        component: LoggedComponent,
+        component: SignedComponent,
         children: [
             {
                 path: 'dashboard',
