@@ -11,4 +11,7 @@ import { ActivatedRoute, ROUTER_DIRECTIVES } from '@angular/router'
 
 export class ToolbarComponent {
     title = 'Shopping List Web';
+
+    doLogout() {
+    }
 }
