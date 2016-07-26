@@ -21,8 +21,7 @@ import { UserService, } from '../shared/index';
 })
 
 export class LoginComponent {
-    private username: string;
-    private password: string;
+    private loginForm: any;
 
     constructor(
         private userService: UserService,
@@ -43,8 +42,6 @@ export class LoginComponent {
             this.loginForm.value.username,
             this.loginForm.value.password
         );
-        console.log(this.userService.getUser());
-
         this.router.navigate(['/dashboard']);
     }
 }

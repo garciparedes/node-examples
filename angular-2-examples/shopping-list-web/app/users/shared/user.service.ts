@@ -13,9 +13,6 @@ export class UserService {
 
     private user: User;
 
-    setUser(user: User) {
-        this.user = user;
-    }
 
     setUser(username: string, password: string) {
         this.user = new User(username, password);
