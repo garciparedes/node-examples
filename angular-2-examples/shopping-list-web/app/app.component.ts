@@ -35,9 +35,7 @@ import {
     providers: [
         ItemService,
         ProductService,
-        UserService,
         WikipediaService,
-        AuthGuard,
     ]
 })
 

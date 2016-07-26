@@ -13,12 +13,14 @@ export class UserService {
 
     private user: User;
 
-    constructor() {
-        //this.user = new User("garciparedes", "1234");
+    setUser(user: User) {
+        this.user = user;
     }
 
-    setUser(user: User) {
-
+    setUser(username: string, password: string) {
+        this.user = new User(username, password);
+        console.log(this.user);
+        console.log(this.user.getBasicAuth());
     }
 
     getUser(): User {
@@ -33,9 +35,5 @@ export class UserService {
     private handleError(error: any) {
         console.error('An error occurred', error);
         return Promise.reject(error.message || error);
-    }
-
-    isLoggedIn(): boolean {
-        return this.getUser() !== undefined;
     }
 }
