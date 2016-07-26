@@ -5,6 +5,14 @@ import {
 } from '@angular/router';
 
 import {
+    AuthComponent,
+} from './auth/index';
+
+import {
+    SignedComponent,
+} from './signed/index';
+
+import {
     DashboardComponent,
 } from './dashboard/index';
 
@@ -33,48 +41,60 @@ const routes: RouterConfig = [
       pathMatch: 'full'
     },
     {
-        path: 'dashboard',
-        component: DashboardComponent,
-        canActivate: [AuthGuard]
+        path: '',
+        component: AuthComponent,
+        children: [
+            {
+                path: 'signin',
+                component: SigninComponent
+            },
+            {
+                path: 'login',
+                component: LoginComponent
+            }
+        ]
     },
     {
-        path: 'items',
-        component: ItemListComponent,
-        canActivate: [AuthGuard]
+        path: '',
+        component: SignedComponent,
+        children: [
+            {
+                path: 'dashboard',
+                component: DashboardComponent,
+                canActivate: [AuthGuard]
+            },
+            {
+                path: 'items',
+                component: ItemListComponent,
+                canActivate: [AuthGuard]
+            },
+            {
+                path: 'items/:id',
+                component: ItemListComponent,
+                canActivate: [AuthGuard]
+            },
+            {
+                path: 'products',
+                component: ProductListComponent,
+                canActivate: [AuthGuard]
+            },
+            {
+                path: 'products/add',
+                component: AddProductComponent,
+                canActivate: [AuthGuard]
+            },
+            {
+                path: 'products/:id',
+                component: ProductDetailComponent,
+                canActivate: [AuthGuard]
+            },
+            {
+                path: 'profile',
+                component: ProfileComponent,
+                canActivate: [AuthGuard]
+            }
+        ]
     },
-    {
-        path: 'items/:id',
-        component: ItemListComponent,
-        canActivate: [AuthGuard]
-    },
-    {
-        path: 'products',
-        component: ProductListComponent,
-        canActivate: [AuthGuard]
-    },
-    {
-        path: 'products/add',
-        component: AddProductComponent,
-        canActivate: [AuthGuard]
-    },
-    {
-        path: 'products/:id',
-        component: ProductDetailComponent,
-        canActivate: [AuthGuard]
-    },
-    {
-        path: 'profile',
-        component: ProfileComponent,
-        canActivate: [AuthGuard]
-    },
-    {
-        path: 'login',
-        component: LoginComponent
-    },
-    {
-        path: 'signin',
-        component: SigninComponent
-    }
 ];
 
 export const APP_ROUTER_PROVIDERS = [
